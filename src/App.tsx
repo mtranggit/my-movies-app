@@ -1,10 +1,9 @@
 function App() {
-
   return (
     <>
-     <p>Hello My Movies App!</p> 
+      <p>Hello My Movies App!</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
