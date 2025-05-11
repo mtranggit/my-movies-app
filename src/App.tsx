@@ -1,40 +1,18 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 import type {MovieEntry, MoviesData, ProgramType} from "./data/movies";
+import {useFetch} from "./hooks/useFetch";
 
 const MAX_ENTRIES = 21;
 const MOVIES_URL = "https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json"; // Replace with actual API URL
 
 function App() {
-  const url = MOVIES_URL;
-  const [movies, setMovies] = useState<MovieEntry[]>([]);
+  const {data: moviesData, loading, error} = useFetch<MoviesData>(MOVIES_URL);
   const [filter, setFilter] = useState<ProgramType | undefined>(undefined);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      setError(null);
-
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status} ${response.statusText}`);
-        }
-        const result = (await response.json()) as MoviesData;
-        setMovies(result.entries);
-      } catch (err: unknown) {
-        setError((err as Error).message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [url]);
-
-  let filteredMovies: MovieEntry[] = [...movies];
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Oops, something went wrong...</p>;
+  let filteredMovies: MovieEntry[] = moviesData?.entries || [];
 
   if (filter != undefined) {
     filteredMovies = filteredMovies
@@ -62,10 +40,8 @@ function App() {
 
       <h2>Hello My Movies App!</h2>
 
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {!loading && !error && movies.length === 0 && <p>No movies found.</p>}
-      {!loading && !error && movies.length > 0 && (
+      {filteredMovies.length === 0 && <p>No movies found.</p>}
+      {filteredMovies.length > 0 && (
         <div>
           {filteredMovies.map((movie) => (
             <div key={movie.title}>
