@@ -1,0 +1,22 @@
+.movie_card {
+	text-align: left;
+}
+
+.movie_card img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.movie_card h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 1.1em;
+	color: #333;
+}
+
+.movie_card p {
+	font-size: 0.9em;
+	color: #666;
+	margin-bottom: 5px;
+}

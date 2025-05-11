@@ -5,7 +5,7 @@ export interface PosterArt {
   height: number;
 }
 
-export type ProgramType = "movie" | "series";
+export type ProgramType = "series" | "movie";
 
 export interface MovieEntry {
   title: string;
@@ -22,7 +22,13 @@ export interface MoviesData {
   entries: MovieEntry[];
 }
 
-// Update the type of sampleMovies to use the new interfaces
+export const programTitleMap: Record<ProgramType, string> = {
+  series: "Series",
+  movie: "Movies",
+};
+
+export const programTypeList = Object.keys(programTitleMap) as ProgramType[];
+
 export const sampleMovies: MoviesData = {
   total: 75,
   entries: [

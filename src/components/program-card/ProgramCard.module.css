@@ -1,0 +1,30 @@
+.program_card {
+	position: relative;
+	cursor: pointer;
+}
+
+.program_card img {
+	width: 180px;
+	height: auto;
+	margin: 0;
+	padding: 5rem 0;
+	background-color: #1E1E1E;
+}
+
+.program_card h4 {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	text-align: center;
+	transform: translateX(-50%) translateY(-50%);
+	font-size: 2rem;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.program_card p {
+	padding: 1rem 0;
+	font-size: 0.9em;
+	color: #333;
+	margin-bottom: 5px;
+}

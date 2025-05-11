@@ -1,0 +1,10 @@
+.icon_playstore {
+	background-image: url('../../assets/store/play-store.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	width: 8.4375rem;
+	height: 2.5rem;
+	display: block;
+	text-indent: -9999px;
+}

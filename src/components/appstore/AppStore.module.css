@@ -1,0 +1,17 @@
+.icon_appstore {
+	background-image: url('../../assets/store/app-store.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	width: 8.4375rem;
+	height: 2.5rem;
+	display: block;
+	text-indent: -9999px;
+}
+
+@media (min-width: 600px) {
+	.icon_appstore {
+		width: 8.4375rem;
+		height: 2.5rem;
+	}
+}
