@@ -5,7 +5,7 @@ This is a demo application showcasing a movie listing app built with React, Type
 ## Setup and Run Instructions
 
 ### Prerequisites
-- Node.js (v16 or higher) and npm installed on your system.
+- Node.js (v18 or higher) and npm installed on your system.
 
 ### Steps to Setup and Run
 1. Clone the repository:
